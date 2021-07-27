@@ -1,0 +1,40 @@
+<p>car-assignment works!</p>
+
+<h1>CAR DETAILS</h1>
+
+<table class="table table-bordered table-hover">
+    <thead>       
+        <tr>
+            <th>Index</th>
+            <th>Brand</th>
+            <th>Price</th>
+            <th>Colour</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let c of car, let i = index">
+        <tr>
+            <td>{{i}}</td>
+            <td>{{c.Brand}}</td>
+            <td>{{c.Price}}</td>
+            <td>{{c.Colour}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+
+<h2>Dispalying RED Colour CARS</h2>
+<h3>NGIF</h3>
+<div *ngFor="let c of car">
+    <li *ngIf="c.Colour==='Red'">{{c.Brand}}  {{c.Price}}  {{c.Colour}}</li>
+</div>
+
+<hr>
+
+<h3>NGSTYLE</h3>
+<div *ngFor="let c of car">
+    <li [ngStyle]="{'background-color':c.Colour==='Red' ? 'red' : 'green'}">{{c.Brand}}  {{c.Price}}  {{c.Colour}}</li>
+</div>
+
+
+    
